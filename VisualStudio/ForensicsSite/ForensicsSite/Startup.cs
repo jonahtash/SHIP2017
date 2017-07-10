@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System.IO;
 
 namespace ForensicsSite
 {
@@ -17,7 +18,17 @@ namespace ForensicsSite
         public void ConfigureServices(IServiceCollection services)
         {
         }
-
+        public byte[] FileToByteArray(string fileName)
+        {
+            byte[] buff = null;
+            FileStream fs = new FileStream(fileName,
+                                           FileMode.Open,
+                                           FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            long numBytes = new FileInfo(fileName).Length;
+            buff = br.ReadBytes((int)numBytes);
+            return buff;
+        }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
@@ -30,7 +41,11 @@ namespace ForensicsSite
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+               byte[] file = FileToByteArray(".//wwwroot//htmlpage.html");
+               string s = System.Text.Encoding.UTF8.GetString(file, 0, file.Length);
+               context.Response.Clear();
+               context.Response.ContentType = "text/html";
+               await context.Response.WriteAsync(s);
             });
         }
     }
