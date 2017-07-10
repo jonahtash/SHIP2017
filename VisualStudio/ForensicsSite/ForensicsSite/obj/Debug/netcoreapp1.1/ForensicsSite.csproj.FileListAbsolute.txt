@@ -1,0 +1,9 @@
+C:\Users\USER\Documents\SHIP2017\VisualStudio\ForensicsSite\ForensicsSite\bin\Debug\netcoreapp1.1\ForensicsSite.deps.json
+C:\Users\USER\Documents\SHIP2017\VisualStudio\ForensicsSite\ForensicsSite\bin\Debug\netcoreapp1.1\ForensicsSite.runtimeconfig.json
+C:\Users\USER\Documents\SHIP2017\VisualStudio\ForensicsSite\ForensicsSite\bin\Debug\netcoreapp1.1\ForensicsSite.runtimeconfig.dev.json
+C:\Users\USER\Documents\SHIP2017\VisualStudio\ForensicsSite\ForensicsSite\bin\Debug\netcoreapp1.1\ForensicsSite.dll
+C:\Users\USER\Documents\SHIP2017\VisualStudio\ForensicsSite\ForensicsSite\bin\Debug\netcoreapp1.1\ForensicsSite.pdb
+C:\Users\USER\Documents\SHIP2017\VisualStudio\ForensicsSite\ForensicsSite\obj\Debug\netcoreapp1.1\ForensicsSite.csprojResolveAssemblyReference.cache
+C:\Users\USER\Documents\SHIP2017\VisualStudio\ForensicsSite\ForensicsSite\obj\Debug\netcoreapp1.1\ForensicsSite.AssemblyInfo.cs
+C:\Users\USER\Documents\SHIP2017\VisualStudio\ForensicsSite\ForensicsSite\obj\Debug\netcoreapp1.1\ForensicsSite.dll
+C:\Users\USER\Documents\SHIP2017\VisualStudio\ForensicsSite\ForensicsSite\obj\Debug\netcoreapp1.1\ForensicsSite.pdb

@@ -8703,10 +8703,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER\\Documents\\Visual Studio 2017\\Projects\\ForensicsSite\\ForensicsSite\\ForensicsSite.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Documents\\SHIP2017\\VisualStudio\\ForensicsSite\\ForensicsSite\\ForensicsSite.csproj",
       "projectName": "ForensicsSite",
-      "projectPath": "C:\\Users\\USER\\Documents\\Visual Studio 2017\\Projects\\ForensicsSite\\ForensicsSite\\ForensicsSite.csproj",
-      "outputPath": "C:\\Users\\USER\\Documents\\Visual Studio 2017\\Projects\\ForensicsSite\\ForensicsSite\\obj\\",
+      "projectPath": "C:\\Users\\USER\\Documents\\SHIP2017\\VisualStudio\\ForensicsSite\\ForensicsSite\\ForensicsSite.csproj",
+      "outputPath": "C:\\Users\\USER\\Documents\\SHIP2017\\VisualStudio\\ForensicsSite\\ForensicsSite\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
