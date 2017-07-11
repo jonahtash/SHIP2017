@@ -5,7 +5,57 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\css\**" />
+    <Compile Remove="wwwroot\fonts\**" />
+    <Compile Remove="wwwroot\js\**" />
+    <Content Remove="wwwroot\css\**" />
+    <Content Remove="wwwroot\fonts\**" />
+    <Content Remove="wwwroot\js\**" />
+    <EmbeddedResource Remove="wwwroot\css\**" />
+    <EmbeddedResource Remove="wwwroot\fonts\**" />
+    <EmbeddedResource Remove="wwwroot\js\**" />
+    <None Remove="wwwroot\css\**" />
+    <None Remove="wwwroot\fonts\**" />
+    <None Remove="wwwroot\js\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot/.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\.DS_Store" />
+    <Content Include="wwwroot\ExpandingSearchBar\.DS_Store" />
+    <Content Include="wwwroot\ExpandingSearchBar\css\.DS_Store" />
+    <Content Include="wwwroot\ExpandingSearchBar\css\component.css" />
+    <Content Include="wwwroot\ExpandingSearchBar\css\default.css" />
+    <Content Include="wwwroot\ExpandingSearchBar\fonts\.DS_Store" />
+    <Content Include="wwwroot\ExpandingSearchBar\fonts\codropsicons\.DS_Store" />
+    <Content Include="wwwroot\ExpandingSearchBar\fonts\codropsicons\codropsicons.eot" />
+    <Content Include="wwwroot\ExpandingSearchBar\fonts\codropsicons\codropsicons.svg" />
+    <Content Include="wwwroot\ExpandingSearchBar\fonts\codropsicons\codropsicons.ttf" />
+    <Content Include="wwwroot\ExpandingSearchBar\fonts\codropsicons\codropsicons.woff" />
+    <Content Include="wwwroot\ExpandingSearchBar\fonts\codropsicons\license.txt" />
+    <Content Include="wwwroot\ExpandingSearchBar\fonts\icomoon\icomoon.dev.svg" />
+    <Content Include="wwwroot\ExpandingSearchBar\fonts\icomoon\icomoon.eot" />
+    <Content Include="wwwroot\ExpandingSearchBar\fonts\icomoon\icomoon.svg" />
+    <Content Include="wwwroot\ExpandingSearchBar\fonts\icomoon\icomoon.ttf" />
+    <Content Include="wwwroot\ExpandingSearchBar\fonts\icomoon\icomoon.woff" />
+    <Content Include="wwwroot\ExpandingSearchBar\fonts\icomoon\license.txt" />
+    <Content Include="wwwroot\ExpandingSearchBar\index.html" />
+    <Content Include="wwwroot\ExpandingSearchBar\js\.DS_Store" />
+    <Content Include="wwwroot\ExpandingSearchBar\js\classie.js" />
+    <Content Include="wwwroot\ExpandingSearchBar\js\modernizr.custom.js" />
+    <Content Include="wwwroot\ExpandingSearchBar\js\uisearch.js" />
+    <Content Include="wwwroot\ExpandingSearchBar\README.md" />
     <Content Include="wwwroot\htmlpage.html" />
+    <Content Include="wwwroot\index.html" />
+    <Content Include="wwwroot\pure-css-search-box\css\style.css" />
+    <Content Include="wwwroot\pure-css-search-box\index.html" />
+    <Content Include="wwwroot\pure-css-search-box\license.txt" />
+    <Content Include="wwwroot\pure-css-search-box\README.txt" />
+    <Content Include="wwwroot\pure-css-search-box\style.css" />
+    <Content Include="wwwroot\style.css" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />

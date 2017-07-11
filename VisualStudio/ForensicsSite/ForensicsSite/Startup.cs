@@ -41,11 +41,31 @@ namespace ForensicsSite
 
             app.Run(async (context) =>
             {
-               byte[] file = FileToByteArray(".//wwwroot//htmlpage.html");
-               string s = System.Text.Encoding.UTF8.GetString(file, 0, file.Length);
-               context.Response.Clear();
-               context.Response.ContentType = "text/html";
-               await context.Response.WriteAsync(s);
+                string path = context.Request.Path.ToUriComponent();
+                if (path.Equals("/"))
+                {
+                    context.Response.Redirect("index.html");
+                    await context.Response.WriteAsync("");
+                }
+                string fileRequested = string.Join("\\", context.Request.Path.ToUriComponent().Split('/'));
+                context.Response.Clear();
+                if (fileRequested.Equals("search")){
+                    fileRequested = "index.html";
+                }
+				if (fileRequested.Contains('.')&&fileRequested.Split('.')[1] == "html")
+				{
+					context.Response.ContentType = "text/html";
+				}
+				if (fileRequested.Contains('.') && fileRequested.Split('.')[1] == "css")
+				{
+					context.Response.ContentType = "text/css";
+				}
+				byte[] file = FileToByteArray(".\\wwwroot\\" + fileRequested);
+				//context.Response.ContentType= context.Request.ContentType;
+				//string s = System.Text.Encoding.UTF8.GetString(file, 0, file.Length);
+				context.Response.Body.Write(file, 0, file.Length);
+				//await context.Response.SendFileAsync(context, ".\\wwwroot\\" + fileRequested);
+				await context.Response.WriteAsync("");
             });
         }
     }
