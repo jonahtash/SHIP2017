@@ -1,1 +1,28 @@
-﻿
+﻿<html>
+<?php
+$servername = "localhost";
+$username = "user";
+$password = "Userp4ss";
+$dbname = "testdata";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT * FROM testdata";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["ID"]. " - Name: " . $row["TITLE"]. " " . $row["SNIPPET"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>
+</html>

@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\.DS_Store" />
     <Content Include="wwwroot\ExpandingSearchBar\.DS_Store" />
     <Content Include="wwwroot\ExpandingSearchBar\css\.DS_Store" />
     <Content Include="wwwroot\ExpandingSearchBar\css\component.css" />
@@ -48,7 +47,10 @@
     <Content Include="wwwroot\ExpandingSearchBar\js\modernizr.custom.js" />
     <Content Include="wwwroot\ExpandingSearchBar\js\uisearch.js" />
     <Content Include="wwwroot\ExpandingSearchBar\README.md" />
+    <Content Include="wwwroot\.DS_Store" />
     <Content Include="wwwroot\htmlpage.html" />
+    <Content Include="wwwroot\htmlpage.php" />
+    <Content Include="wwwroot\htmlpage1.html" />
     <Content Include="wwwroot\index.html" />
     <Content Include="wwwroot\pure-css-search-box\css\style.css" />
     <Content Include="wwwroot\pure-css-search-box\index.html" />
@@ -56,6 +58,33 @@
     <Content Include="wwwroot\pure-css-search-box\README.txt" />
     <Content Include="wwwroot\pure-css-search-box\style.css" />
     <Content Include="wwwroot\style.css" />
+    <Content Include="wwwroot\testphp.php" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\ExpandingSearchBar\.DS_Store" />
+    <None Include="wwwroot\ExpandingSearchBar\css\.DS_Store" />
+    <None Include="wwwroot\ExpandingSearchBar\css\component.css" />
+    <None Include="wwwroot\ExpandingSearchBar\css\default.css" />
+    <None Include="wwwroot\ExpandingSearchBar\fonts\.DS_Store" />
+    <None Include="wwwroot\ExpandingSearchBar\fonts\codropsicons\.DS_Store" />
+    <None Include="wwwroot\ExpandingSearchBar\fonts\codropsicons\codropsicons.eot" />
+    <None Include="wwwroot\ExpandingSearchBar\fonts\codropsicons\codropsicons.svg" />
+    <None Include="wwwroot\ExpandingSearchBar\fonts\codropsicons\codropsicons.ttf" />
+    <None Include="wwwroot\ExpandingSearchBar\fonts\codropsicons\codropsicons.woff" />
+    <None Include="wwwroot\ExpandingSearchBar\fonts\codropsicons\license.txt" />
+    <None Include="wwwroot\ExpandingSearchBar\fonts\icomoon\icomoon.dev.svg" />
+    <None Include="wwwroot\ExpandingSearchBar\fonts\icomoon\icomoon.eot" />
+    <None Include="wwwroot\ExpandingSearchBar\fonts\icomoon\icomoon.svg" />
+    <None Include="wwwroot\ExpandingSearchBar\fonts\icomoon\icomoon.ttf" />
+    <None Include="wwwroot\ExpandingSearchBar\fonts\icomoon\icomoon.woff" />
+    <None Include="wwwroot\ExpandingSearchBar\fonts\icomoon\license.txt" />
+    <None Include="wwwroot\ExpandingSearchBar\index.html" />
+    <None Include="wwwroot\ExpandingSearchBar\js\.DS_Store" />
+    <None Include="wwwroot\ExpandingSearchBar\js\classie.js" />
+    <None Include="wwwroot\ExpandingSearchBar\js\modernizr.custom.js" />
+    <None Include="wwwroot\ExpandingSearchBar\js\uisearch.js" />
+    <None Include="wwwroot\ExpandingSearchBar\README.md" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />

@@ -41,11 +41,12 @@ namespace ForensicsSite
 
             app.Run(async (context) =>
             {
+                string requestType = context.Request.ContentType;
                 string path = context.Request.Path.ToUriComponent();
                 if (path.Equals("/"))
                 {
                     context.Response.Redirect("index.html");
-                    await context.Response.WriteAsync("");
+                    return;
                 }
                 string fileRequested = string.Join("\\", context.Request.Path.ToUriComponent().Split('/'));
                 context.Response.Clear();
@@ -56,15 +57,16 @@ namespace ForensicsSite
 				{
 					context.Response.ContentType = "text/html";
 				}
-				if (fileRequested.Contains('.') && fileRequested.Split('.')[1] == "css")
+                if (fileRequested.Contains('.') && fileRequested.Split('.')[1] == "php")
+                {
+                    context.Response.ContentType = "text/php";
+                }
+                if (fileRequested.Contains('.') && fileRequested.Split('.')[1] == "css")
 				{
 					context.Response.ContentType = "text/css";
 				}
 				byte[] file = FileToByteArray(".\\wwwroot\\" + fileRequested);
-				//context.Response.ContentType= context.Request.ContentType;
-				//string s = System.Text.Encoding.UTF8.GetString(file, 0, file.Length);
 				context.Response.Body.Write(file, 0, file.Length);
-				//await context.Response.SendFileAsync(context, ".\\wwwroot\\" + fileRequested);
 				await context.Response.WriteAsync("");
             });
         }
