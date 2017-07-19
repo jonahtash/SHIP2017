@@ -11,7 +11,6 @@ namespace SHIPSite
 {
     public partial class WebForm4 : System.Web.UI.Page
     {
-
         public List<Row> GetRows()
         {
             string query = Request.QueryString["q"];
@@ -24,39 +23,28 @@ namespace SHIPSite
             MySqlConnection conn = new MySqlConnection();
             string myConnectionString = "server=localhost;uid=user;pwd=Userp4ss;database=testdata;";
             conn.ConnectionString = myConnectionString;
-            foreach (string word in querySplit)
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("search", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("query", query);
+            try
             {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand("search", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("query", word);
-                try
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read()){
-                        var notIn = true;
-                        string id = reader.GetString("id");
-                        foreach (Row r in ret){
-                            if (int.Parse(id) >= int.Parse(r.id))
-                            {
-                                if (int.Parse(id) == int.Parse(r.id)) { notIn = false; }
-                                break;
-                            }
-                        }
-                        if (notIn){
-                            Row addRow = new Row();
-                            addRow.id = id;
-                            addRow.title = reader.GetString("title");
-                            addRow.snippet = reader.GetString("snippet");
-                            ret.Add(addRow);
-                        }
-                    }
+                    Row addRow = new Row();
+                    string id = reader.GetString("id");
+                    addRow.id = id;
+                    addRow.title = reader.GetString("title");
+                    addRow.snippet = reader.GetString("snippet");
+                    addRow.url = reader.GetString("url");
+                    ret.Add(addRow);
                 }
-                catch (MySqlException ex)
-                {
-                }
-                conn.Close();
             }
+            catch (MySqlException ex)
+            {
+            }
+            conn.Close();
             return ret;
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -89,6 +77,11 @@ namespace SHIPSite
             {
                 return;
             }
+
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

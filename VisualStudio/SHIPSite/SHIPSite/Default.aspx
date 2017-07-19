@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SHIPSite.WebForm3" MasterPageFile="~/Site.Master" %>
-
+<%@ Register Assembly="AjaxControlToolkit"  Namespace="AjaxControlToolkit" TagPrefix="ajaxTookit" %>
 <asp:Content ID="Content1" runat="server" contentplaceholderid="MainContent">
     <script type="text/javascript">
     function button_click(objTextBox,objBtnID){
@@ -31,7 +31,18 @@
     <div aria-orientation="vertical" style="height: 491px; text-align: center; margin: 0 auto; clip: rect(auto, 0px, auto, auto);">
                 <div style="position: relative; top: 50%;">
             <asp:TextBox ID="SearchText" runat="server" Height="30px" Width="309px"  CssClass="padding" AutoPostback="False" OnClick="searchText_click()">Search...</asp:TextBox>
-
+                    <ajaxToolkit:AutoCompleteExtender 
+    runat="server" 
+    ID="autoComplete1" 
+    TargetControlID="SearchText"
+    ServiceMethod="GetCompletionList"
+    ServicePath="AutoComplete.asmx"
+    MinimumPrefixLength="2" 
+    CompletionInterval="250"
+    EnableCaching="true"
+    CompletionSetCount="20" 
+    ShowOnlyCurrentWordInCompletionListItem="true">
+</ajaxToolkit:AutoCompleteExtender>
                     <asp:Button ID="Submit" runat="server" BackColor="#0099FF" BorderStyle="None" Height="31px" Text="Go" Width="61px" onclick="Submit_Click" CssClass="SubmitButton"/>
 
                 </div>

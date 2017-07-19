@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -31,6 +33,27 @@ namespace SHIPSite
         protected void Submit_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Search.aspx?q=" + SearchText.Text);
+        }
+        public List<string> GetCompletionList()
+        {
+            List<string> ret = new List<string>();
+            MySqlConnection conn = new MySqlConnection();
+            string myConnectionString = "server=localhost;uid=user;pwd=Userp4ss;database=testdata;";
+            conn.ConnectionString = myConnectionString;
+            MySqlCommand cmd = new MySqlCommand("search", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("query", SearchText.Text);
+            try{
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                int c = 0;
+                while (reader.Read() && c < 10){
+                    ret.Add(reader.GetString("title"));
+                    c++;
+                }
+            }
+            catch (MySqlException ex){}
+            return ret;
         }
     }
 }

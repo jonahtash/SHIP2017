@@ -3,7 +3,7 @@
 <asp:Content ID="MainContent" runat="server" contentplaceholderid="MainContent">
 
     <style>
-    table {
+        table {
      table-layout:fixed;
     }
 
@@ -17,7 +17,12 @@
     <div style="height: 506px">
     <div style="position: relative; top: 50%; text-align: center; left: -7px;">
         <asp:GridView ID="GridView1" runat="server" SelectMethod="GetRows"
-        ItemType="SHIPSite.Row" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" OnRowDataBound="GridView1_RowDataBound">
+        ItemType="SHIPSite.Row" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" OnRowDataBound="GridView1_RowDataBound" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AutoGenerateColumns="False" Height="101px">
+            <Columns>
+                <asp:BoundField DataField="id" />
+                <asp:HyperLinkField DataNavigateUrlFields="url" DataTextField="title" />
+                <asp:BoundField DataField="snippet" />
+            </Columns>
             <FooterStyle BackColor="#CCCC99" ForeColor="Black"/>
             <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
