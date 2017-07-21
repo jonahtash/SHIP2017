@@ -19,9 +19,9 @@
         <asp:GridView ID="GridView1" runat="server" SelectMethod="GetRows"
         ItemType="SHIPSite.Row" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" OnRowDataBound="GridView1_RowDataBound" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AutoGenerateColumns="False" Height="101px">
             <Columns>
-                <asp:BoundField DataField="id" />
-                <asp:HyperLinkField DataNavigateUrlFields="url" DataTextField="title" />
-                <asp:BoundField DataField="snippet" />
+                <asp:BoundField DataField="id"  HeaderText="ID"/>
+                <asp:HyperLinkField DataNavigateUrlFields="url" DataTextField="title" HeaderText="TITLE"/>
+                <asp:BoundField DataField="snippet" HeaderText="SNIPPET"/>
             </Columns>
             <FooterStyle BackColor="#CCCC99" ForeColor="Black"/>
             <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />

@@ -224,8 +224,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="People.aspx" />
-    <Content Include="Table.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Search.aspx" />
     <Content Include="AutoComplete.asmx" />
@@ -439,20 +437,6 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="People.aspx.cs">
-      <DependentUpon>People.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="People.aspx.designer.cs">
-      <DependentUpon>People.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Table.aspx.cs">
-      <DependentUpon>Table.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Table.aspx.designer.cs">
-      <DependentUpon>Table.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

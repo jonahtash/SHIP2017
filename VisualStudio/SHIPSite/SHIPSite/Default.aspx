@@ -24,26 +24,40 @@
     }
     </script>
     <style>
-        .padding {padding:.5em;}
+        .padding {padding:.5em; font-family:HelvLight; font-size:18px; width:500px;min-width:400px;}
         .padding:focus{ outline: none;}
+        .SubmitButton{min-width:65px;}
         .SubmitButton:focus{outline: none;}
+        .drop{
+            font-family:HelvLight;
+            background-color:white;
+            font-size:14px;
+            padding-bottom:.5em;
+        }
+        .drop_highlight{
+            background-color:#5381cc;
+            color:white;
+            font-family:HelvLight;
+            padding-bottom:.5em;
+            font-size:14px;
+        }
     </style>        
     <div aria-orientation="vertical" style="height: 491px; text-align: center; margin: 0 auto; clip: rect(auto, 0px, auto, auto);">
-                <div style="position: relative; top: 50%;">
-            <asp:TextBox ID="SearchText" runat="server" Height="30px" Width="309px"  CssClass="padding" AutoPostback="False" OnClick="searchText_click()">Search...</asp:TextBox>
+                <div style="position: relative; top: 50%; display:inline-flex">
+            <asp:TextBox ID="SearchText" runat="server" Height="50px" CssClass="padding" AutoPostback="False" OnClick="searchText_click()">Search...</asp:TextBox>
                     <ajaxToolkit:AutoCompleteExtender 
     runat="server" 
     ID="autoComplete1" 
     TargetControlID="SearchText"
     ServiceMethod="GetCompletionList"
     ServicePath="AutoComplete.asmx"
-    MinimumPrefixLength="2" 
+    MinimumPrefixLength="1" 
     CompletionInterval="250"
     EnableCaching="true"
-    CompletionSetCount="20" 
-    ShowOnlyCurrentWordInCompletionListItem="true">
+    CompletionSetCount="10" 
+    ShowOnlyCurrentWordInCompletionListItem="true" CompletionListItemCssClass="drop" CompletionListHighlightedItemCssClass="drop_highlight" >
 </ajaxToolkit:AutoCompleteExtender>
-                    <asp:Button ID="Submit" runat="server" BackColor="#0099FF" BorderStyle="None" Height="31px" Text="Go" Width="61px" onclick="Submit_Click" CssClass="SubmitButton"/>
+                    <asp:Button ID="Submit" runat="server" BackColor="#0099FF" BorderStyle="None" Height="50px" Text="Go" Width="65px" onclick="Submit_Click" CssClass="SubmitButton"/>
 
                 </div>
             </div>

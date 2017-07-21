@@ -19,12 +19,6 @@ namespace SHIPSite
     [System.Web.Script.Services.ScriptService]
     public class WebService1 : System.Web.Services.WebService
     {
-
-        [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hello World";
-        }
         [WebMethod]
         [ScriptMethod]
         public string[] GetCompletionList(string prefixText, int count)
@@ -33,7 +27,7 @@ namespace SHIPSite
             MySqlConnection conn = new MySqlConnection();
             string myConnectionString = "server=localhost;uid=user;pwd=Userp4ss;database=testdata;";
             conn.ConnectionString = myConnectionString;
-            MySqlCommand cmd = new MySqlCommand("search_autocomplete", conn);
+            MySqlCommand cmd = new MySqlCommand("search_autocomplete_big", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("query", prefixText);
             try

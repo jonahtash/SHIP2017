@@ -19,14 +19,24 @@ namespace SHIPSite
                 return new List<Row>();
             }
             string[] querySplit = query.Split(' ');
+            List<string> split = new List<string>();
+            split = Enumerable.Repeat("", 15).ToList();
+            for(int i = 0; i < querySplit.Length && i<15; i++){
+                split[i] = querySplit[i];
+            }
             List<Row> ret = new List<Row>();
             MySqlConnection conn = new MySqlConnection();
             string myConnectionString = "server=localhost;uid=user;pwd=Userp4ss;database=testdata;";
             conn.ConnectionString = myConnectionString;
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("search", conn);
+            MySqlCommand cmd = new MySqlCommand("search_15", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("query", query);
+            cmd.Parameters.AddWithValue("a", split.ElementAtOrDefault(0)); cmd.Parameters.AddWithValue("b", split.ElementAtOrDefault(1)); cmd.Parameters.AddWithValue("c", split.ElementAtOrDefault(2));
+            cmd.Parameters.AddWithValue("d", split.ElementAtOrDefault(3)); cmd.Parameters.AddWithValue("e", split.ElementAtOrDefault(4)); cmd.Parameters.AddWithValue("f", split.ElementAtOrDefault(5));
+            cmd.Parameters.AddWithValue("g", split.ElementAtOrDefault(6)); cmd.Parameters.AddWithValue("h", split.ElementAtOrDefault(7)); cmd.Parameters.AddWithValue("i", split.ElementAtOrDefault(8));
+            cmd.Parameters.AddWithValue("j", split.ElementAtOrDefault(9)); cmd.Parameters.AddWithValue("k", split.ElementAtOrDefault(10)); cmd.Parameters.AddWithValue("l", split.ElementAtOrDefault(11));
+            cmd.Parameters.AddWithValue("m", split.ElementAtOrDefault(12)); cmd.Parameters.AddWithValue("n", split.ElementAtOrDefault(13)); cmd.Parameters.AddWithValue("o", split.ElementAtOrDefault(14));
+
             try
             {
                 MySqlDataReader reader = cmd.ExecuteReader();
